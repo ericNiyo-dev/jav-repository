@@ -3,21 +3,25 @@ import { useState } from "react";
 
 function Like(){
 
-    const [Like,setLike] =useState(0);
+    const [like,setLike] =useState(0);
 
-    function like(){
-        setLike=(Like+1)
+    function Like(){
+        setLike(like+1)
     }
 
     function Unlike(){
-        setLike=(-1)
+        setLike(like-1)
+
+        if(like<=0){
+           setLike(0)
+        }
     }
 
     return(
 
         <div>
-            <h2>likes:{Like}</h2>
-            <button onClick={like}>like</button>
+            <h2>likes:{like}</h2>
+            <button onClick={Like}>Like</button>
             <button onClick={Unlike}>Unlike</button>
         </div>
 
